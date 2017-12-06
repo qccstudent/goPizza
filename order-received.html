@@ -232,13 +232,30 @@
                            <div class="woocommerce">
                               <p class="woocommerce-thankyou-order-received">Thank you. Your order has been received.</p>
                               <ul class="woocommerce-thankyou-order-details order_details">
-                                 <li class="order">Order Number:<strong>645</strong></li>
+                                 <li class="order">Order Number:<span style="background-color:yellow"><strong>645</strong><span></li>
                                  <li class="date">Date:<strong>December 2, 2017</strong></li>
                                  <li class="total">Total:<strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25.90</span></strong></li>
                                  <li class="method">Payment Method:<strong>Direct Bank Transfer</strong></li>
                               </ul>
                               <div class="clear"></div>
                               <p>Please use your Order ID as the payment reference. Your order won’t be available until the funds have been approved in the account.</p>
+                              <form action="#"  class="track_order">
+                                 <p>To track your order please enter your Order ID in the box below and press the "Track" button. This was given to you on your receipt and in the confirmation email you should have received.</p>
+                                 <p class="form-row form-row-first">
+                                    <label for="orderid">Order ID</label>
+                                    <input class="input-text" type="text" name="orderid" id="orderid" placeholder="Found in your order confirmation email." />
+                                 </p>
+                                 <p class="form-row form-row-last">
+                                    <label for="order_email">Billing Email</label>
+                                    <input class="input-text" type="text" name="order_email" id="order_email" placeholder="Email you used during checkout." />
+                                 </p>
+                                 <div class="clear"></div>
+                                 <p class="form-row">
+                                    <input type="submit" class="button" name="track" value="Track" />
+                                 </p>
+                                 <input type="hidden" id="_wpnonce" name="_wpnonce" value="c64ec2465f" />
+                                 <input type="hidden" name="_wp_http_referer" value="/pizzaro/track-order/" />
+                              </form>
                               <h2>Order Details</h2>
                               <table class="shop_table order_details">
                                  <thead>
