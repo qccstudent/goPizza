@@ -300,7 +300,7 @@
                               </a>
                            </div>
                            <div class="banner col-sm-6 center animate-in-view" data-animation="fadeInDown" id="toggle">
-                              <a href="#">
+                              <a href="#" onclick="msgbox2()">
                                  <div class="banner-bg" style="background-size: cover; background-position: center center; background-image: url( assets/images/homepage-banners/homepage-banner3-9.jpg ); height: 214px;">
                                     <div class="caption">
                                        <h3 class="title">COUPON CODES/REWARDS POINTS</h3>
@@ -389,9 +389,13 @@
       <script type="text/javascript" src="assets/js/scripts.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script>
-      $( document ).click(function() {
-      $( "#toggle" ).effect( "shake" );
-      });
-      </script>
+      var name1 = document.getElementById("toggle");
+
+      function msgbox2 ()
+      {
+	       alert ('Coupon Code Today is: PIZZADISCOUNT and Rewards Points Available: 200.');
+       }
+
+       </script>
    </body>
 </html>
