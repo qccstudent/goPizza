@@ -299,7 +299,7 @@
                                  </div>
                               </a>
                            </div>
-                           <div class="banner col-sm-6 center animate-in-view" data-animation="fadeInDown">
+                           <div class="banner col-sm-6 center animate-in-view" data-animation="fadeInDown" id="toggle">
                               <a href="#">
                                  <div class="banner-bg" style="background-size: cover; background-position: center center; background-image: url( assets/images/homepage-banners/homepage-banner3-9.jpg ); height: 214px;">
                                     <div class="caption">
@@ -388,5 +388,10 @@
       <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script type="text/javascript" src="assets/js/scripts.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script>
+      $( document ).click(function() {
+      $( "#toggle" ).effect( "shake" );
+      });
+      </script>
    </body>
 </html>
