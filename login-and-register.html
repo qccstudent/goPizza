@@ -13,6 +13,9 @@
       <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.min.css" media="all" />      
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CYanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
       <link rel="shortcut icon" href="assets/images/fav-icon.png">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    </head>
    <body class="woocommerce-account">
       <div id="page" class="hfeed site">
@@ -227,7 +230,7 @@
                                           <p class="form-row">
                                              <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="02aaeb6b10" />
                                              <input type="hidden" name="_wp_http_referer" value="/pizzaro/my-account/" />
-                                             <input type="submit" class="woocommerce-Button button" name="login" value="Login" />
+                                             <input type="submit" class="woocommerce-Button button" name="login" value="Login" data-toggle="loginstatus" title="Status:" data-content="Sorry, This portion is under maintenance."/>
                                              <label for="rememberme" class="inline">
                                              <input class="woocommerce-Input woocommerce-Input--checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> Remember me
                                              </label>
@@ -370,11 +373,14 @@
       <script type="text/javascript" src="assets/js/tether.min.js"></script>
       <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
-      
       <script type="text/javascript" src="assets/js/social.share.min.js"></script>
       <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script type="text/javascript" src="assets/js/scripts.min.js"></script>
-
+      <script>
+      $(document).ready(function(){
+      $('[data-toggle="loginstatus"]').popover();   
+      });
+      </script>
 
    </body>
 </html>
