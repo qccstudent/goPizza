@@ -252,7 +252,7 @@
                                           </span>
                                        </div>
                                        <div class="form-group clearfix">
-                                          <p><input type="submit" value="Send Message" class="wpcf7-form-control wpcf7-submit" onclick="sndmsg ()"/></p>
+                                          <p><input type="submit" value="Send Message" class="wpcf7-form-control wpcf7-submit" id="smsg" onclick="sndmsg ()"/></p>
                                        </div>
                                        <div class="wpcf7-response-output wpcf7-display-none">
                                        </div>
@@ -386,7 +386,7 @@
       <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script type="text/javascript" src="assets/js/scripts.min.js"></script>
       <script>
-      var name1 = document.getElementById("msgName");
+      var name1 = document.getElementById("smsg");
 
       function sndmsg ()
       {
