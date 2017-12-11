@@ -262,18 +262,18 @@
                                              </dl>
                                           </td>
                                           <td class="product-price" data-title="Price">
-                                             <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>25.90</span>
+                                             <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span><span class="c_price_1">25.90</span></span>
                                           </td>
                                           <td class="product-quantity" data-title="Quantity">
                                              <div class="qty-btn">
                                                 <label>Quantity</label>
                                                 <div class="quantity">
-                                                   <input type="number" value="1" title="Qty" class="input-text qty text"/>
+                                                   <input type="number" value="1" title="Qty" class="quantity1 input-text qty text" min="1"/>
                                                 </div>
                                              </div>
                                           </td>
                                           <td class="product-subtotal" data-title="Total">
-                                             <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>25.90</span>
+                                             <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span><span class="total1">25.90</span></span>
                                           </td>
                                        </tr>
                                        <tr class="cart_item">
@@ -300,18 +300,18 @@
                                              </dl>
                                           </td>
                                           <td class="product-price" data-title="Price">
-                                             <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>25.90</span>
+                                             <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span><span class="c_price_2">25.90</span></span>
                                           </td>
                                           <td class="product-quantity" data-title="Quantity">
                                              <div class="qty-btn">
                                                 <label>Quantity</label>
                                                 <div class="quantity">
-                                                   <input type="number"  value="1" title="Qty" class="input-text qty text" size="4" />
+                                                   <input type="number"  value="1" title="Qty" class=" quantity2 input-text qty text" size="4" min="1" />
                                                 </div>
                                              </div>
                                           </td>
                                           <td class="product-subtotal" data-title="Total">
-                                             <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>25.90</span>
+                                             <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span><span class="total2">25.90</span></span></span>
                                           </td>
                                        </tr>
                                        <tr>
@@ -338,13 +338,13 @@
                                        <tr class="cart-subtotal">
                                           <th>Subtotal</th>
                                           <td data-title="Subtotal">
-                                             <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>51.80</span>
+                                             <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span><span class="f_total">51.80</span></span>
                                           </td>
                                        </tr>
                                        <tr class="order-total">
                                           <th>Total</th>
                                           <td data-title="Total">
-                                             <strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>51.80</span></strong>
+                                             <strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span><span class="f_total">51.80</span></span></strong>
                                           </td>
                                        </tr>
                                     </table>
@@ -457,5 +457,78 @@
       <script type="text/javascript" src="assets/js/social.share.min.js"></script>
       <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script type="text/javascript" src="assets/js/scripts.min.js"></script>
+
+            <script type="text/javascript">
+
+function setCookie(cname,cvalue,exdays) {
+var d = new Date();
+d.setTime(d.getTime() + (exdays*24*60*60*1000));
+var expires = "expires=" + d.toGMTString();
+document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+var name = cname + "=";
+var decodedCookie = decodeURIComponent(document.cookie);
+var ca = decodedCookie.split(';');
+for(var i = 0; i < ca.length; i++) {
+var c = ca[i];
+while (c.charAt(0) == ' ') {
+c = c.substring(1);
+}
+if (c.indexOf(name) == 0) {
+return c.substring(name.length, c.length);
+}
+}
+return "";
+}
+
+function checkCookie() {
+var user=getCookie("username");
+if (user != "") {
+alert("Welcome again " + user);
+} else {
+user = prompt("Please enter your name:","");
+if (user != "" && user != null) {
+setCookie("username", user, 30);
+}
+}
+}
+
+
+
+$(".qty").change(function(){
+
+
+  var product_price1 = $('.c_price_1').text();
+  var quantity1 = $('.quantity1').val();
+  var new_price1 = product_price1 * quantity1;
+ var new_price_1 = (new_price1).toFixed(2);
+  $('.total1').text(new_price_1);
+
+
+    var product_price2 = $('.c_price_2').text();
+  var quantity2 = $('.quantity2').val();
+  var new_price2 = product_price2 * quantity2;
+  var new_price_2 = (new_price2).toFixed(2);
+  $('.total2').text(new_price_2);
+
+var ftotal = new_price1 + new_price2;
+var f_total = (ftotal).toFixed(2);
+  $('.f_total').text(f_total);
+  
+  
+  setCookie("product_1", new_price1, 30);
+  setCookie("product_2", new_price2, 30);
+  setCookie("quantity1", quantity1, 30);
+  setCookie("quantity2", quantity2, 30);
+  setCookie("totle", ftotal, 30);
+
+});
+
+
+      </script>
+
+
    </body>
 </html>
