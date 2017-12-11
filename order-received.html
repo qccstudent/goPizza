@@ -13,6 +13,24 @@
       <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.min.css" media="all" />      
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CYanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
       <link rel="shortcut icon" href="assets/images/fav-icon.png">
+	  <script>
+function getCookie(cname) {
+var name = cname + "=";
+var decodedCookie = decodeURIComponent(document.cookie);
+var ca = decodedCookie.split(';');
+for(var i = 0; i < ca.length; i++) {
+var c = ca[i];
+while (c.charAt(0) == ' ') {
+c = c.substring(1);
+}
+if (c.indexOf(name) == 0) {
+return c.substring(name.length, c.length);
+}
+}
+return "";
+}	
+</script>
+
    </head>
    <body class="woocommerce-page woocommerce-order-received woocommerce-checkout">
       <div id="page" class="hfeed site">
@@ -234,7 +252,15 @@
                               <ul class="woocommerce-thankyou-order-details order_details">
                                  <li class="order">Order Number:<span style="background-color:yellow"><strong>645</strong><span></li>
                                  <li class="date">Date:<strong>December 2, 2017</strong></li>
-                                 <li class="total">Total:<strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25.90</span></strong></li>
+                                 <li class="total">Total:<strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span><script>
+  var totle = getCookie("totle");
+    if (totle != "") {
+	var a = parseFloat(totle).toFixed(2);
+        document.write(a);
+    } else {
+        document.write('0');
+    }
+</script></span></strong></li>
                                  <li class="method">Payment Method:<strong>Direct Bank Transfer</strong></li>
                               </ul>
                               <div class="clear"></div>
@@ -281,7 +307,15 @@
                                  <tfoot>
                                     <tr>
                                        <th scope="row">Subtotal:</th>
-                                       <td><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25.90</span></td>
+                                       <td><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span><script>
+  var totle = getCookie("totle");
+    if (totle != "") {
+	var a = parseFloat(totle).toFixed(2);
+        document.write(a);
+    } else {
+        document.write('0');
+    }
+</script></span></td>
                                     </tr>
                                     <tr>
                                        <th scope="row">Payment Method:</th>
@@ -289,7 +323,15 @@
                                     </tr>
                                     <tr>
                                        <th scope="row">Total:</th>
-                                       <td><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25.90</span></td>
+                                       <td><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span><script>
+  var totle = getCookie("totle");
+    if (totle != "") {
+	var a = parseFloat(totle).toFixed(2);
+        document.write(a);
+    } else {
+        document.write('0');
+    }
+</script></span></td>
                                     </tr>
                                  </tfoot>
                               </table>
