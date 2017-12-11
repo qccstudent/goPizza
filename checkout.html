@@ -13,6 +13,23 @@
       <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.min.css" media="all" />      
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CYanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
       <link rel="shortcut icon" href="assets/images/fav-icon.png">
+<script>
+function getCookie(cname) {
+var name = cname + "=";
+var decodedCookie = decodeURIComponent(document.cookie);
+var ca = decodedCookie.split(';');
+for(var i = 0; i < ca.length; i++) {
+var c = ca[i];
+while (c.charAt(0) == ' ') {
+c = c.substring(1);
+}
+if (c.indexOf(name) == 0) {
+return c.substring(name.length, c.length);
+}
+}
+return "";
+}	
+</script>
    </head>
    <body class="woocommerce-checkout">
       <div id="page" class="hfeed site">
@@ -273,7 +290,7 @@
                                           </p>
                                           <p class="form-row form-row form-row-last address-field validate-required validate-postcode" id="billing_postcode_field">
                                              <label for="billing_postcode" class="">Postcode / ZIP </label>
-                                             <input type="text" class="input-text " name="billing_postcode" id="billing_postcode" placeholder=""  autocomplete="postal-code" value="DFSAF@GMAIL.COM"  />
+                                             <input type="text" class="input-text " name="billing_postcode" id="billing_postcode" placeholder=""  autocomplete="postal-code" value=""  />
                                           </p>
                                           <div class="clear"></div>
                                           <p class="form-row form-row-wide create-account">
@@ -312,7 +329,15 @@
                                        <tbody>
                                           <tr class="cart_item">
                                              <td class="product-name">
-                                                Bacon Burger&nbsp;<strong class="product-quantity">&times; 1</strong>
+                                                Bacon Burger&nbsp;<strong class="product-quantity">&times; <script>
+  var product_1 = getCookie("quantity1");
+    if (product_1 != "") {
+	var a = parseFloat(product_1).toFixed(2);
+        document.write(a);
+    } else {
+        document.write('0');
+    }
+</script></strong>
                                                 <dl class="variation">
                                                    <dt class="variation-Baseprice">Base price:</dt>
                                                    <dd class="variation-Baseprice">
@@ -327,12 +352,28 @@
                                              </td>
                                              <td class="product-total">
                                                 <span class="woocommerce-Price-amount amount">
-                                                <span class="woocommerce-Price-currencySymbol">&#36;</span>25.90</span>
+                                                <span class="woocommerce-Price-currencySymbol">&#36;</span><script>
+  var product_1 = getCookie("product_1");
+    if (product_1 != "") {
+	var a = parseFloat(product_1).toFixed(2);
+        document.write(product_1);
+    } else {
+        document.write('0');
+    }
+</script></span>
                                              </td>
                                           </tr>
                                           <tr class="cart_item">
                                              <td class="product-name">
-                                                Pepperoni Pizza&nbsp;<strong class="product-quantity">&times; 1</strong>
+                                                Pepperoni Pizza&nbsp;<strong class="product-quantity">&times; <script>
+  var product_2 = getCookie("quantity2");
+    if (product_2 != "") {
+	var a = parseFloat(product_2).toFixed(2); 
+        document.write(a);
+    } else {
+        document.write('0');
+    }
+</script></strong>
                                                 <dl class="variation">
                                                    <dt class="variation-Baseprice">Base price:</dt>
                                                    <dd class="variation-Baseprice">
@@ -346,7 +387,15 @@
                                              </td>
                                              <td class="product-total">
                                                 <span class="woocommerce-Price-amount amount">
-                                                <span class="woocommerce-Price-currencySymbol">&#36;</span>25.90</span>
+                                                <span class="woocommerce-Price-currencySymbol">&#36;</span><script>
+  var product_2 = getCookie("product_2");
+    if (product_2 != "") {
+	var a = parseFloat(product_2).toFixed(2);
+        document.write(a);
+    } else {
+        document.write('0');
+    }
+</script></span>
                                              </td>
                                           </tr>
                                        </tbody>
@@ -355,17 +404,33 @@
                                              <th>Subtotal</th>
                                              <td>
                                                 <span class="woocommerce-Price-amount amount">
-                                                <span class="woocommerce-Price-currencySymbol">&#36;</span>51.80</span>
+                                                <span class="woocommerce-Price-currencySymbol">&#36;</span><script>
+  var totle = getCookie("totle");
+    if (totle != "") {
+	var a = parseFloat(totle).toFixed(2);
+        document.write(a);
+    } else {
+        document.write('0');
+    }
+</script></span>
                                              </td>
                                           </tr>
                                           <tr class="order-total">
                                              <th>Total</th>
                                              <td>
-                                                <strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>51.80</span></strong>
+                                                <strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span><script>
+  var totle = getCookie("totle");
+    if (totle != "") {
+	var a = parseFloat(totle).toFixed(2);
+        document.write(a);
+    } else {
+        document.write('0');
+    }
+</script></span></strong>
                                              </td>
                                           </tr>
                                        </tfoot>
-                                    </table>
+                                    </table> 
                                     <div id="payment" class="woocommerce-checkout-payment">
                                        <ul class="wc_payment_methods payment_methods methods">
                                           <li class="wc_payment_method payment_method_bacs">
